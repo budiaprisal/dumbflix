@@ -33,8 +33,7 @@ func main() {
 	routes.RouteInit(e.Group("/api/v1"))
 	e.Static("/uploads", "./uploads")
 
-	port := os.Getenv("PORT")
-
-	fmt.Println("Server starting", port)
-	e.Logger.Fatal(e.Start("localhost:" + port))
+	var PORT = os.Getenv("PORT")
+	fmt.Println("Server running ", PORT)
+	e.Logger.Fatal(e.Start(":" + PORT))
 }
