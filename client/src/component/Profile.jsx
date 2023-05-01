@@ -133,11 +133,7 @@ export default function Profile() {
             </div>
             <div className="d-grid ms-auto p-2 mb-3 ">
               <img
-                src={
-                  profile?.photo
-                    ? `http://localhost:5000/uploads/${profile.photo}`
-                    : User
-                }
+                src={profile?.photo ? `${profile.photo}` : User}
                 className="mt-2 rounded-2"
                 style={{ objectFit: "cover" }}
                 width="300px"
