@@ -39,9 +39,9 @@ export const ModalLogin = (props) => {
       });
 
       setAuthToken(response.data.data.token);
-
+      console.log("ini data admin", response.data.is_admin);
       // Status check
-      if (response.data.data.is_admin === true) {
+      if (response.data.is_admin === true) {
         Navigate("/tabletransaction");
       } else {
         Navigate("/");
@@ -107,14 +107,24 @@ export const ModalLogin = (props) => {
               />
             </Form.Group>
             <div className="d-grid">
-              <Button className="border-0 fw-bold" style={{backgroundColor:"#E50914"}} type="submit" onClick={handleLogin}>
+              <Button
+                className="border-0 fw-bold"
+                style={{ backgroundColor: "#E50914" }}
+                type="submit"
+                onClick={handleLogin}
+              >
                 Login
               </Button>
             </div>
           </div>
           <div className="d-flex justify-content-center mt-3">
-            <p style={{color:"#B1B1B1"}}>Don't have an account? Klik</p>
-            <Link to="/" onClick={props.onClick} className="ms-1 text-decoration-none fw-bold" style={{color:"#B1B1B1"}}>
+            <p style={{ color: "#B1B1B1" }}>Don't have an account? Klik</p>
+            <Link
+              to="/"
+              onClick={props.onClick}
+              className="ms-1 text-decoration-none fw-bold"
+              style={{ color: "#B1B1B1" }}
+            >
               Here
             </Link>
           </div>

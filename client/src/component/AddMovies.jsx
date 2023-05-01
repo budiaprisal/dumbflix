@@ -58,13 +58,13 @@ function AdminAddMovies() {
       // console.log(form);
 
       const formData = new FormData();
-      if (addFilms.thumbnailfilm) {
-        formData.set(
-          "thumbnailfilm",
-          addFilms?.thumbnailfilm[0],
-          addFilms?.thumbnailfilm[0]?.name
-        );
-      }
+
+      formData.set(
+        "thumbnailfilm",
+        addFilms?.thumbnailfilm[0],
+        addFilms?.thumbnailfilm[0]?.name
+      );
+
       formData.set("title", addFilms.title);
       formData.set("description", addFilms.description);
       formData.set("year", addFilms.year);

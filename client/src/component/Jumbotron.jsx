@@ -36,7 +36,7 @@ export default function Jumbotrons() {
               <img
                 key={item.id}
                 className="w-75 align-content-center"
-                src={`http://localhost:5000/uploads/${item.thumbnailfilm}`}
+                src={item?.thumbnailfilm}
                 alt="First slide"
               />
               <Carousel.Caption className="mb-5">

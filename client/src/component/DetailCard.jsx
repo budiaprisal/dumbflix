@@ -37,7 +37,7 @@ export default function Details(props) {
   }
 
   // Fetching product data from database
-  let { data: films } = useQuery("filmCache1", async () => {
+  let { data: films } = useQuery("filmDetailCache", async () => {
     const response = await API.get(`/film/${id}`);
     return response.data.data;
   });
@@ -45,7 +45,7 @@ export default function Details(props) {
     const response = await API.get(`/film/${id}/episode`);
     return response.data.data;
   });
-
+  console.log("episode", films);
   return (
     <>
       <div>
@@ -64,7 +64,7 @@ export default function Details(props) {
             <div className="col-md-2 col-6 mb-3">
               <img
                 className="rounded"
-                src={"http://localhost:5000/uploads/" + films?.thumbnailfilm}
+                src={films?.thumbnailfilm}
                 width="200px"
                 height="300px"
                 style={{ objectFit: "cover" }}
@@ -93,8 +93,8 @@ export default function Details(props) {
                   <SwiperSlide key={i}>
                     <div className="carousel-item active">
                       <ReactPlayer
-                        url={data.linkfilm}
-                        light={`http://localhost:5000/uploads/${data.thumbnailfilm}`}
+                        url={data?.linkfilm}
+                        light={data?.thumbnailfilm}
                         width={500}
                         height={300}
                       />

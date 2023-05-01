@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import "../App.css";
 import { API } from "../config/api";
+import { useEffect } from "react";
 
 function ListFilm() {
   const navigate = useNavigate();
@@ -31,15 +32,16 @@ function ListFilm() {
       }).then(async (result) => {
         if (result.isConfirmed) {
           await API.delete(`/film/${id}`);
-          console.log(id);
-          Swal.fire("Deleted!", "Your file has been deleted.", "success");
-          refetch();
         }
       });
     } catch (err) {
       console.error(err);
     }
   });
+
+  useEffect(() => {
+    refetch();
+  }, [deleteHandle]);
 
   return (
     <div style={{ backgroundColor: "black", marginTop: "70px" }}>
@@ -102,7 +104,7 @@ function ListFilm() {
                   style={{ backgroundColor: "black" }}
                 >
                   <Card.Img
-                    src={`http://localhost:5000/uploads/${item?.thumbnailfilm}`}
+                    src={item?.thumbnailfilm}
                     onClick={() => {
                       navigate(`/detail/${item.id}`);
                     }}

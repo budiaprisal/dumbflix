@@ -34,6 +34,7 @@ func main() {
 	e.Static("/uploads", "./uploads")
 
 	var PORT = os.Getenv("PORT")
-	fmt.Println("Server running ", PORT)
-	e.Logger.Fatal(e.Start(":" + PORT))
+
+	fmt.Println("server running localhost:" + PORT)
+	e.Logger.Fatal(e.Start(":" + PORT)) // delete localhost
 }
