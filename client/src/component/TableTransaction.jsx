@@ -47,13 +47,9 @@ export default function TableTransactions() {
                   <td>{item.user.fullname}</td>
                   <td>{item.user.phone}</td>
                   <td>{item.duedate}</td>
-                  <td>
-                    {item.user.subscribe !== "" &&
-                    item.user.subscribe !== "false"
-                      ? "Inactive"
-                      : "Active"}
-                  </td>
+
                   <td>{item.status}</td>
+                  <td>{item.user.subscribe}</td>
                 </tr>
               </>
             );
