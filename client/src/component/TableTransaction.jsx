@@ -6,7 +6,7 @@ import { useQuery } from "react-query";
 export default function TableTransactions() {
   let { data: transaction } = useQuery("transactionCache", async () => {
     const response = await API.get("/transactions");
-    console.log(response.data.data);
+    console.log(response.status);
     return response.data.data;
   });
 

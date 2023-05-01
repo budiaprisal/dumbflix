@@ -63,6 +63,14 @@ func (r *repository) UpdateTransaction(status string, ID int) (models.Transactio
 
 	// err := r.db.Save(&transactionData).Error
 
+	transaction.Status = status
+	if status == "success" {
+		var user models.User
+		r.db.First(&user, transaction.UserID)
+		user.Subscribe = "Active"
+		r.db.Save(&user)
+	}
+
 	err := r.db.Save(&transaction).Error
 
 	return transaction, err
