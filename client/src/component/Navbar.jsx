@@ -241,9 +241,7 @@ export default function Header() {
                           title={
                             <img
                               src={
-                                profile?.photo
-                                  ? `http://localhost:5000/uploads/${profile.photo}`
-                                  : Profile
+                                profile?.photo ? `${profile.photo}` : Profile
                               }
                               className="rounded-circle "
                               style={{ objectFit: "cover" }}
