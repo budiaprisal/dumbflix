@@ -240,9 +240,7 @@ export default function Header() {
                           align="end"
                           title={
                             <img
-                              src={
-                                profile?.photo ? `${profile.photo}` : Profile
-                              }
+                              src={profile?.photo ? profile.photo : UserProfile}
                               className="rounded-circle "
                               style={{ objectFit: "cover" }}
                               width="40px"
