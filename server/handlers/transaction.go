@@ -87,7 +87,7 @@ func (h *handlerTransaction) CreateTransaction(c echo.Context) error {
 		StartDate: Startdate,
 		DueDate:   Duedate,
 		Price:     request.Price,
-		Status:    "pending",
+		Status:    request.Status,
 	}
 
 	dataTransactions, err := h.TransactionRepository.CreateTransaction(transaction)

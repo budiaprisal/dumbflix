@@ -9,6 +9,7 @@ export default function TableTransactions() {
     console.log(response.data.data);
     return response.data.data;
   });
+
   return (
     <Container className="mt-5 pt-5">
       <h2 className="mt-5 text-white"> Income Transaction</h2>

@@ -15,6 +15,7 @@ type TransactionRequest struct {
 }
 
 type TransactionRequestcreate struct {
-	Price int `json:"price"`
-	Days  int `json:"days"`
+	Price  int    `json:"price"`
+	Days   int    `json:"days"`
+	Status string `json: "status"`
 }
