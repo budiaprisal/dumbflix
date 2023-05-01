@@ -53,30 +53,7 @@ export default function TableTransactions() {
                       ? "Inactive"
                       : "Active"}
                   </td>
-                  {item.status === "pending" && (
-                    <td
-                      className="text-capitalize"
-                      style={{ color: "#FF9900" }}
-                    >
-                      {item.status}
-                    </td>
-                  )}
-                  {item.status === "success" && (
-                    <td
-                      className="text-capitalize"
-                      style={{ color: "#78A85A" }}
-                    >
-                      {item.status}
-                    </td>
-                  )}
-                  {item.status === "failed" && (
-                    <td
-                      className="text-capitalize"
-                      style={{ color: "#E83939" }}
-                    >
-                      {item.status}
-                    </td>
-                  )}
+                  <td>{item.status}</td>
                 </tr>
               </>
             );
